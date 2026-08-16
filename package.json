@@ -2,6 +2,7 @@
   "name": "dsh-deepseek-usage",
   "version": "1.0.0",
   "private": true,
+  "license": "GPL-2.0",
   "description": "Minimal DeepSeek balance & usage dashboard for DeepSeek Harness（极简的 DeepSeek 余额/用量面板）",
   "type": "module",
   "main": "./lib/index.js",
