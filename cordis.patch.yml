@@ -1,0 +1,4 @@
+# dsh-deepseek-usage 的组合层（bundle 形态）：把自身挂载为一行 insert。
+- insert:
+    - id: deepseek-usage
+      name: dsh-deepseek-usage
