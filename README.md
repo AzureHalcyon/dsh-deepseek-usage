@@ -1,6 +1,5 @@
-# DeepSeek 用量 · 余额面板
-
-极简的 DeepSeek 余额 / 用量显示板，集成在 DSH 设置页，无需额外窗口。
+<h1 align="center">dsh-deepseek-usage</h1>
+<p align="center">在 DSH 设置页查看 DeepSeek 余额与用量。</p>
 
 ## 功能
 
