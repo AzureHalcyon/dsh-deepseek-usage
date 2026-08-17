@@ -54,7 +54,7 @@
 dsh plugin --profile web add github:AzureHalcyon/dsh-deepseek-usage#main
 ```
 
-本地开发（link 安装，改代码即生效）：
+本地开发（link 安装）：
 
 ```bash
 dsh plugin --profile web add link:<本仓库绝对路径>

@@ -17,7 +17,7 @@
     },
     "client": {
       "platform": "web",
-      "inject": ["slots"]
+      "inject": ["slots", "timer"]
     }
   }
 }
