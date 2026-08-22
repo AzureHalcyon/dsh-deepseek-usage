@@ -37,7 +37,7 @@
 | 凭据        | 存放                                         | 说明            |
 | --------- | ------------------------------------------ | ------------- |
 | API Key   | DSH 凭据服务 `DEEPSEEK_API_KEY`（与调用 LLM 共用，只读） | 在 DSH 模型设置中更改 |
-| userToken | `~/.dsh/ds-balance.json`                   | 自动尝试失败时需手动粘贴  |
+| userToken | `~/.dsh/ds-balance.json`                   | 由用户手动粘贴，不读取浏览器数据 |
 
 ## 安全设计
 
@@ -66,7 +66,7 @@ dsh plugin --profile web add link:<本仓库绝对路径>
 
 1. 打开 **设置 → DeepSeek 用量**；
 2. API Key 自动复用 DSH 的 `DEEPSEEK_API_KEY`（只读展示，无需额外配置）；
-3. userToken 自动读取浏览器已登录的 `platform.deepseek.com` 会话；读不到时按提示手动粘贴（登录Deepseek开放平台后浏览器控制台执行 `localStorage.getItem("userToken")`）；
+3. 登录 DeepSeek 开放平台后，在浏览器控制台执行 `localStorage.getItem("userToken")`，将结果手动粘贴到插件中；插件不会扫描浏览器数据；
 4. 点「立即同步」。
 
 ## 插件管理
