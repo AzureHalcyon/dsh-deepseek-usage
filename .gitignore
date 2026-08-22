@@ -1,5 +1,11 @@
 node_modules/
 *.log
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
 .DS_Store
 Thumbs.db
 .vscode/

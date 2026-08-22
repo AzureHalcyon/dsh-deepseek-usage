@@ -51,7 +51,7 @@
 正式使用（从 GitHub 安装）：
 
 ```bash
-dsh plugin --profile web add github:AzureHalcyon/dsh-deepseek-usage#main
+dsh plugin --profile web add github:AzureHalcyon/dsh-deepseek-usage#2bb93b9
 ```
 
 本地开发（link 安装）：
@@ -74,5 +74,5 @@ dsh plugin --profile web add link:<本仓库绝对路径>
 已装插件建议用 plugin-registry 的薄控制台管理（浏览器面板）：管理 profile 插件安装态（bundle 层栈 + insert 行 + 启停），无需手改配置。安装：
 
 ```bash
-dsh plugin --profile web add "github:vlln/plugin-registry#main&path:/packages/plugin/console"
+dsh plugin --profile web add "github:vlln/plugin-registry#b0ae1ea03a6c04c548dd10bf58f0fe7a70a92b29&path:/packages/plugin/console"
 ```
