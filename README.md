@@ -37,13 +37,13 @@
 | 凭据        | 存放                                         | 说明            |
 | --------- | ------------------------------------------ | ------------- |
 | API Key   | DSH 凭据服务 `DEEPSEEK_API_KEY`（与调用 LLM 共用，只读） | 在 DSH 模型设置中更改 |
-| userToken | `~/.dsh/ds-balance.json`                   | 由用户手动粘贴，不读取浏览器数据 |
+| userToken | DSH 凭据服务 `DEEPSEEK_USER_TOKEN`          | 由用户手动粘贴，不读取浏览器数据 |
 
 ## 安全设计
 
-- 凭据服务端保存：API Key 走 DSH 凭据服务，userToken 存 `~/.dsh/ds-balance.json`（0600），浏览器只读掩码。
+- 凭据服务端保存：API Key 和 userToken 都走 DSH 凭据服务；手动输入的 Token 会通过设置页的一次性请求提交到本地 DSH 服务，插件不会读取浏览器数据库。
 - Node 原生 `fetch` 直连：无 shell / 子进程中间层，凭据只在进程内存流转。
-- 回环 + 同源守卫：所有路由仅接受 127.0.0.1 回环与同源请求，内置 DNS-rebinding 防护。
+- 回环 + 同源守卫：所有路由仅接受 127.0.0.1 回环与同源请求，内置 DNS-rebinding 防护；这不是对同机其他进程的独立认证。
 - 稳定错误码 + 最小日志：日志只记录 `{code, status}`。
 
 ## 安装
