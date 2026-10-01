@@ -43,7 +43,7 @@
 
 - 凭据服务端保存：API Key 和 userToken 都走 DSH 凭据服务；手动输入的 Token 会通过设置页的一次性请求提交到本地 DSH 服务，插件不会读取浏览器数据库。
 - Node 原生 `fetch` 直连：无 shell / 子进程中间层，凭据只在进程内存流转。
-- 回环 + 同源守卫：所有路由仅接受 127.0.0.1 回环与同源请求，内置 DNS-rebinding 防护；这不是对同机其他进程的独立认证。
+- 回环 / 可信主机名 + 同源守卫：所有路由只接受 127.0.0.1 回环，或 DSH 自己已信任的 authority（`--trusted-host` 里的 Tailscale / LAN 域名，即 `ctx.webRuntime.trustedHosts`），并要求同源；内置 DNS-rebinding 防护。远端部署通过 GUI 本身的地址就能打开面板，而不是被 403。这不是对同机其他进程的独立认证。
 - 稳定错误码 + 最小日志：日志只记录 `{code, status}`。
 
 ## 安装
